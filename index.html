@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Локальный чат</title>
+    
+    <link rel="stylesheet" href="reset.css">
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+
+  <body>
+
+      <div class="container clearfix"> <!--КОНТЕЙНЕР С ЛЕВОЙ КОЛОНКОЙ (АВАТАР И ПОЛЬЗОВАТЕЛЬ+ПОИСК) -->
+    <div class="people-list" id="people-list">
+      <div class="search">
+        <input type="text" placeholder="Поиск" />
+        <i class="fa fa-search"></i>
+      </div>
+      <ul class="list">
+        <li class="clearfix">
+          <img src="ajMNMtaqsZA.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Сергей Ванеев</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+       
+        
+        <li class="clearfix">
+          <img src="6C18366BC.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Другой пользователь</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="chat"><!--ПРАВЫЙ КОНТЕЙНЕР С ПЕРЕПИСКОЙ -->
+      <div class="chat-header clearfix">
+        <img src="img/ajMNMtaqsZA.jpg" alt="avatar" />
+        
+        <div class="chat-about">
+          <div class="chat-with">Сергей Ванеев </div>
+          <div class="chat-num-messages">Личные сообщения</div>
+        </div>
+        <i class="fa fa-star"></i>
+      </div> <!-- -->
+      
+      <div class="chat-history">
+        <ul>
+          
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Бот</span>
+              <span class="message-data-time">10:31 AM, сегодня</span>
+            </div>
+            <i class="fa fa-circle online"></i>
+            <i class="fa fa-circle online" style="color: #AED2A6"></i>
+            <i class="fa fa-circle online" style="color:#DAE9DA"></i>
+          </li>
+          
+        </ul>
+        
+      </div> <!-- end chat-history -->
+      <!--НИЖНИЙ КОНТЕЙНЕР С КНОПКОМИ ФУНЦКИЙ ОТПРАВИТЬ СООБЩЕНИЕ -->
+      <div class="chat-message clearfix">
+        <textarea name="message-to-send" id="message-to-send" placeholder ="Введите сообщение" rows="3"></textarea>
+                
+        <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+        <i class="fa fa-file-image-o"></i>
+        
+        <button>Отправить</button>
+
+      </div>
+      
+    </div> 
+    
+  </div> 
+
+
+<!--СКРИПТЫ НАПИСАНИЯ И ОТПРАВКИ СООБЩЕНИЯ-->
+<script id="message-template" type="text/x-handlebars-template">
+  <li class="clearfix">
+    <div class="message-data align-right">
+      <span class="message-data-time" >{{time}}, Сегодня</span> &nbsp; &nbsp;
+      <span class="message-data-name" >Сергей Ванеев</span> <i class="fa fa-circle me"></i>
+    </div>
+    <div class="message other-message float-right">
+      {{messageOutput}}
+    </div>
+  </li>
+</script>
+
+<script id="message-response-template" type="text/x-handlebars-template">
+  <li>
+    <div class="message-data">
+      <span class="message-data-name"><i class="fa fa-circle online"></i> Другой пользователь</span>
+      <span class="message-data-time">{{time}}, Today</span>
+    </div>
+    <div class="message my-message">
+      {{response}}
+    </div>
+  </li>
+</script>
+
+<!--СКРИПТЫ ПЛАГИНЫ И JQUERY-->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js'></script>
+<script src="main.js"></script>
+
+    
+    
+  </body>
+</html>
